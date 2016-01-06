@@ -35,9 +35,9 @@
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
-    <!--<context-param>
+    <context-param>
         <param-name>org.jboss.jbossfaces.WAR_BUNDLES_JSF_IMPL</param-name>
         <param-value>true</param-value>
-    </context-param>-->
+    </context-param>
 
 </web-app>
