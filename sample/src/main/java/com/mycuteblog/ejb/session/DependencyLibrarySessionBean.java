@@ -1,7 +1,7 @@
 package com.mycuteblog.ejb.session;
 
 import javax.ejb.EJB;
-import javax.ejb.Stateless;
+import javax.ejb.Stateful;
 import java.util.List;
 
 /**
@@ -19,11 +19,11 @@ import java.util.List;
  * Created on : 1/5/16 5:37 PM
  */
 
-@Stateless
-public class DependencySessionBean implements LibrarySessionBeanRemote {
+@Stateful
+public class DependencyLibrarySessionBean implements DependencySessionBeanRemote {
 
-    @EJB
-    StatelessLibrarySessionBean librarySessionBean;
+    @EJB(beanName = "StatefulLibrarySessionBean")
+    LibrarySessionBeanRemote librarySessionBean;
 
     @Override
     public void addBook(String bookName) {

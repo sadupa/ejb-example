@@ -11,8 +11,8 @@
 
     <modules>
         <module>sample</module>
-        <module>ear</module>
         <module>jsf</module>
+        <module>ear</module>
     </modules>
 
 
