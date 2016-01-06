@@ -17,7 +17,7 @@
     <dependencies>
         <dependency>
             <groupId>com.mycuteblog</groupId>
-            <artifactId>sample</artifactId>
+            <artifactId>ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
@@ -50,8 +50,8 @@
                         </ejbModule>-->
                         <jarModule>
                             <groupId>com.mycuteblog</groupId>
-                            <artifactId>sample</artifactId>
-                            <bundleFileName>ejb-sample.jar</bundleFileName>
+                            <artifactId>ejb</artifactId>
+                            <bundleFileName>ejb.jar</bundleFileName>
                             <includeInApplicationXml>true</includeInApplicationXml>
                         </jarModule>
                     </modules>
