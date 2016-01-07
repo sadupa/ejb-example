@@ -59,7 +59,7 @@ public class StatelessEJBTester {
             showGUI();
             while (choice != 0) {
                 if (choice == 1) {
-                    LibrarySessionBeanRemote librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("ejb-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
+                    LibrarySessionBeanRemote librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
                     System.out.println("Enter book name:");
                     String bookName = getInput();
                     librarySessionBean.addBook(bookName);
@@ -70,7 +70,7 @@ public class StatelessEJBTester {
                     }
                     showGUI();
                 } else if (choice == 2) {
-                    LibrarySessionBeanRemote librarySessionBean2 = (LibrarySessionBeanRemote) ctx.lookup("ejb-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
+                    LibrarySessionBeanRemote librarySessionBean2 = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
                     List<String> books = librarySessionBean2.getBooks();
                     System.out.println("Added books\n");
                     for (String book : books) {

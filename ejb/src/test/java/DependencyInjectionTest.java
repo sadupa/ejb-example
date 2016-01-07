@@ -59,7 +59,7 @@ public class DependencyInjectionTest {
             showGUI();
             while (choice != 0) {
                 if (choice == 1) {
-                    DependencySessionBeanRemote librarySessionBean = (DependencySessionBeanRemote) ctx.lookup("ejb-ear-1.0-SNAPSHOT/DependencyLibrarySessionBean/remote");
+                    DependencySessionBeanRemote librarySessionBean = (DependencySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/DependencyLibrarySessionBean/remote");
                     System.out.println("Enter book name:");
                     String bookName = getInput();
                     librarySessionBean.addBook(bookName);
@@ -70,7 +70,7 @@ public class DependencyInjectionTest {
                     }
                     showGUI();
                 } else if (choice == 2) {
-                    DependencySessionBeanRemote librarySessionBean2 = (DependencySessionBeanRemote) ctx.lookup("ejb-ear-1.0-SNAPSHOT/DependencyLibrarySessionBean/remote");
+                    DependencySessionBeanRemote librarySessionBean2 = (DependencySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/DependencyLibrarySessionBean/remote");
                     List<String> books = librarySessionBean2.getBooks();
                     System.out.println("Added books\n");
                     for (String book : books) {

@@ -48,9 +48,9 @@ public class PersistentEJBTester {
     }
 
     private void showGUI() {
-        System.out.println("**********************");
+        System.out.println("---------------------");
         System.out.println("Welcome to Book Store");
-        System.out.println("**********************");
+        System.out.println("---------------------");
         System.out.print("1. Add Book\n2. Show books\n0. Exit \nEnter Choice: ");
         choice = Integer.parseInt(getInput());
     }
@@ -59,7 +59,7 @@ public class PersistentEJBTester {
         try {
             showGUI();
             while (choice != 0) {
-                LibraryPersistentBeanRemote libraryPersistentBean = (LibraryPersistentBeanRemote) ctx.lookup("ejb-ear-1.0-SNAPSHOT/LibraryPersistentBean/remote");
+                LibraryPersistentBeanRemote libraryPersistentBean = (LibraryPersistentBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/LibraryPersistentBean/remote");
                 if (choice == 1) {
                     System.out.println("Enter book name:");
                     String bookName = getInput();
