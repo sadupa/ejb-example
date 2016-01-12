@@ -1,8 +1,7 @@
-package com.mycuteblog.ejb.persistent;
+package com.mycuteblog.ejb.core.bean;
 
-import com.mycuteblog.ejb.model.Book;
+import com.mycuteblog.ejb.core.bean.model.Book;
 
-import javax.ejb.Remote;
 import java.util.List;
 
 /**
@@ -20,7 +19,6 @@ import java.util.List;
  * Created on : 12/22/15 1:33 PM
  */
 
-@Remote
 public interface LibraryPersistentBeanRemote {
     void addBook(Book book);
 

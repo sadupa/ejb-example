@@ -1,5 +1,5 @@
-import com.mycuteblog.ejb.model.Book;
-import com.mycuteblog.ejb.persistent.LibraryPersistentBeanRemote;
+import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
+import com.mycuteblog.ejb.core.bean.model.Book;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

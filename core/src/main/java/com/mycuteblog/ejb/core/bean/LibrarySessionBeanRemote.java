@@ -1,6 +1,5 @@
-package com.mycuteblog.ejb.session;
+package com.mycuteblog.ejb.core.bean;
 
-import javax.ejb.Remote;
 import java.util.List;
 
 /**
@@ -18,8 +17,7 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
-@Remote
-public interface DependencySessionBeanRemote {
+public interface LibrarySessionBeanRemote {
     void addBook(String bookName);
     List<String> getBooks();
 }

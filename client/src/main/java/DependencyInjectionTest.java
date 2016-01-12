@@ -1,4 +1,5 @@
-import com.mycuteblog.ejb.session.DependencySessionBeanRemote;
+
+import com.mycuteblog.ejb.core.bean.DependencySessionBeanRemote;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

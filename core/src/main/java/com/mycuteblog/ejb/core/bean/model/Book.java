@@ -1,4 +1,4 @@
-package com.mycuteblog.ejb.model;
+package com.mycuteblog.ejb.core.bean.model;
 
 import javax.persistence.*;
 import java.io.Serializable;

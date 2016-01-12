@@ -1,7 +1,9 @@
 package com.mycuteblog.ejb.persistent;
 
-import com.mycuteblog.ejb.model.Book;
+import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
+import com.mycuteblog.ejb.core.bean.model.Book;
 
+import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -22,6 +24,7 @@ import java.util.List;
  * Created on : 12/22/15 2:56 PM
  */
 
+@Remote
 @Stateless
 public class LibraryPersistentBean implements LibraryPersistentBeanRemote {
 
