@@ -8,6 +8,10 @@
     <title>Book List</title>
 </h:head>
 <h:body>
-#{libraryService.book}
+    <h:dataTable value="#{libraryService.bookList}" var="book">
+        <h:column>#{book}</h:column>
+    </h:dataTable>
+
+    <h:link value="Add another book" outcome="add-book"/>
 </h:body>
 </html>

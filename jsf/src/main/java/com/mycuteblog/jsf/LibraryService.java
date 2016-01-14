@@ -8,6 +8,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.io.Serializable;
 import java.util.Hashtable;
+import java.util.List;
 
 /**
  * (C) Copyright 2016 hSenid Mobile Solutions (Pvt) Limited.
@@ -40,28 +41,33 @@ public class LibraryService implements Serializable {
         }
     }
 
-    public String getBook() {
+    public List<String> getBookList() {
+        LibrarySessionBeanRemote librarySessionBean = null;
         try {
-            LibrarySessionBeanRemote librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
-            if (librarySessionBean != null && librarySessionBean.getBooks() != null) {
-                return librarySessionBean.getBooks().toString();
-            } else {
-                return "Cannot add book!";
-            }
+            librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
         } catch (NamingException e) {
             e.printStackTrace();
-            return "Exception occurred while trying to get remote com.mycuteblog.ejb.core.bean";
+        }
+        if (librarySessionBean != null && librarySessionBean.getBooks() != null) {
+            return librarySessionBean.getBooks();
+        } else {
+            return null;
         }
     }
 
+    public String getBook(){
+        return "";
+    }
+
     public void setBook(String book) {
+        LibrarySessionBeanRemote librarySessionBean = null;
         try {
-            LibrarySessionBeanRemote librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
-            if (librarySessionBean != null) {
-                librarySessionBean.addBook(book);
-            }
+            librarySessionBean = (LibrarySessionBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/StatelessLibrarySessionBean/remote");
         } catch (NamingException e) {
             e.printStackTrace();
+        }
+        if (librarySessionBean != null) {
+            librarySessionBean.addBook(book);
         }
     }
 }

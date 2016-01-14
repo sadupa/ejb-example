@@ -9,10 +9,12 @@
 </h:head>
 <h:body>
     <h1>EJB Library System</h1>
+
     <h2>Add Book</h2>
-    <h:outputLabel value="Name"/>
+
     <h:form>
-        <h:inputText value="#{libraryService.book}" />
+        <h:outputLabel value="Name"/>
+        <h:inputText value="#{libraryService.book}"/>
         <h:commandButton action="book-list" value="Add Book"/>
     </h:form>
 </h:body>
