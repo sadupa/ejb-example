@@ -1,5 +1,6 @@
 package com.mycuteblog.ejb.core.bean;
 
+import javax.ws.rs.Path;
 import java.util.List;
 
 /**
@@ -17,6 +18,7 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
+@Path("/book-service")
 public interface LibrarySessionBeanRemote {
     void addBook(String bookName);
     List<String> getBooks();

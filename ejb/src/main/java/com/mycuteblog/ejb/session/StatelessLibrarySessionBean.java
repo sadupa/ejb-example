@@ -6,6 +6,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import java.util.List;
  */
 
 @Remote
-@Path("/book-service")
+@Path("get-book")
 @Stateless
 public class StatelessLibrarySessionBean implements LibrarySessionBeanRemote {
 
@@ -47,7 +48,8 @@ public class StatelessLibrarySessionBean implements LibrarySessionBeanRemote {
     }
 
     @GET
+    @Produces({"text/plain"})
     public String getBookList() {
-        return bookShelf.toString();
+        return "ok";
     }
 }

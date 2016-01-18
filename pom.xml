@@ -13,6 +13,7 @@
         <module>core</module>
         <module>ejb</module>
         <module>jsf</module>
+        <module>api</module>
         <module>ear</module>
         <module>client</module>
     </modules>
