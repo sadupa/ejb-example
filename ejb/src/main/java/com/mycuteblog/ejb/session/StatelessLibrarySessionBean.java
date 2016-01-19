@@ -44,7 +44,6 @@ public class StatelessLibrarySessionBean implements LibrarySessionBeanRemote {
 
     @Override
     public Response getBookList() {
-        System.out.println("received http get request");
-        return Response.ok("OK").build();
+        return Response.ok(getBooks()).build();
     }
 }

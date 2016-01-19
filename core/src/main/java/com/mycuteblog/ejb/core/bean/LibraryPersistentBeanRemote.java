@@ -2,6 +2,12 @@ package com.mycuteblog.ejb.core.bean;
 
 import com.mycuteblog.ejb.core.bean.model.Book;
 
+import javax.ejb.Remote;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -19,8 +25,15 @@ import java.util.List;
  * Created on : 12/22/15 1:33 PM
  */
 
+@Remote
+@Path("/library")
 public interface LibraryPersistentBeanRemote {
     void addBook(Book book);
 
     List<Book> getBooks();
+
+    @Path("/get-book-list")
+    @GET
+    @Produces({"application/json"})
+    Response getBookList();
 }

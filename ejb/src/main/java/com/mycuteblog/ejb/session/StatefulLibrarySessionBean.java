@@ -43,7 +43,6 @@ public class StatefulLibrarySessionBean implements LibrarySessionBeanRemote {
 
     @Override
     public Response getBookList() {
-        System.out.println("received http get request");
-        return Response.ok().build();
+        return Response.ok(getBooks()).build();
     }
 }

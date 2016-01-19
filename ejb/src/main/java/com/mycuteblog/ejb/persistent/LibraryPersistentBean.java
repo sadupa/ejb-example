@@ -3,10 +3,10 @@ package com.mycuteblog.ejb.persistent;
 import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
 import com.mycuteblog.ejb.core.bean.model.Book;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -24,7 +24,6 @@ import java.util.List;
  * Created on : 12/22/15 2:56 PM
  */
 
-@Remote
 @Stateless
 public class LibraryPersistentBean implements LibraryPersistentBeanRemote {
 
@@ -39,5 +38,9 @@ public class LibraryPersistentBean implements LibraryPersistentBeanRemote {
     @Override
     public List<Book> getBooks() {
         return entityManager.createQuery("From Book").getResultList();
+    }
+
+    public Response getBookList() {
+        return Response.ok(getBooks()).build();
     }
 }
