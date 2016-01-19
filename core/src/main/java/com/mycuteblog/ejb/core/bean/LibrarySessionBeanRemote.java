@@ -1,6 +1,9 @@
 package com.mycuteblog.ejb.core.bean;
 
+import javax.ejb.Remote;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -18,8 +21,14 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
-@Path("/book-service")
+@Remote
+@Path("/library")
 public interface LibrarySessionBeanRemote {
     void addBook(String bookName);
+
     List<String> getBooks();
+
+    @Path("get-book")
+    @GET
+    Response getBookList();
 }

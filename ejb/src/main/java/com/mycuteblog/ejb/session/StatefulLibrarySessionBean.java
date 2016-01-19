@@ -2,8 +2,8 @@ package com.mycuteblog.ejb.session;
 
 import com.mycuteblog.ejb.core.bean.LibrarySessionBeanRemote;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateful;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +22,6 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
-@Remote
 @Stateful
 public class StatefulLibrarySessionBean implements LibrarySessionBeanRemote {
 
@@ -40,5 +39,11 @@ public class StatefulLibrarySessionBean implements LibrarySessionBeanRemote {
     @Override
     public List<String> getBooks() {
         return bookShelf;
+    }
+
+    @Override
+    public Response getBookList() {
+        System.out.println("received http get request");
+        return Response.ok().build();
     }
 }

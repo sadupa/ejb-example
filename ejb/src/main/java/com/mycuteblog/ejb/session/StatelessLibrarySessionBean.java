@@ -2,11 +2,8 @@ package com.mycuteblog.ejb.session;
 
 import com.mycuteblog.ejb.core.bean.LibrarySessionBeanRemote;
 
-import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +22,6 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
-@Remote
-@Path("get-book")
 @Stateless
 public class StatelessLibrarySessionBean implements LibrarySessionBeanRemote {
 
@@ -47,9 +42,9 @@ public class StatelessLibrarySessionBean implements LibrarySessionBeanRemote {
         return bookShelf;
     }
 
-    @GET
-    @Produces({"text/plain"})
-    public String getBookList() {
-        return "ok";
+    @Override
+    public Response getBookList() {
+        System.out.println("received http get request");
+        return Response.ok("OK").build();
     }
 }
