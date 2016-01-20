@@ -1,3 +1,6 @@
+This is a java example code using ejb+jsf+maven
+
+
 How to create a queue in Jboss server
 ============================================
 
