@@ -1,5 +1,6 @@
 
 import com.mycuteblog.ejb.core.bean.LibraryDependencyBeanRemote;
+import com.mycuteblog.ejb.core.model.Book;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -64,18 +65,18 @@ public class DependencyInjectionTest {
                     System.out.println("Enter book name:");
                     String bookName = getInput();
                     librarySessionBean.addBook(bookName);
-                    List<String> books = librarySessionBean.getBooks();
+                    List<Book> books = librarySessionBean.getBooks();
                     System.out.println("Added books\n");
-                    for (String book : books) {
-                        System.out.println(book);
+                    for (Book book : books) {
+                        System.out.println(book.getName());
                     }
                     showGUI();
                 } else if (choice == 2) {
                     LibraryDependencyBeanRemote librarySessionBean2 = (LibraryDependencyBeanRemote) ctx.lookup("sample-ear-1.0-SNAPSHOT/DependencyLibrarySessionBean/remote");
-                    List<String> books = librarySessionBean2.getBooks();
+                    List<Book> books = librarySessionBean2.getBooks();
                     System.out.println("Added books\n");
-                    for (String book : books) {
-                        System.out.println(book);
+                    for (Book book : books) {
+                        System.out.println(book.getName());
                     }
                     showGUI();
                 }
