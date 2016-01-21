@@ -3,7 +3,6 @@ package com.mycuteblog.ejb.core.bean;
 import javax.ejb.Remote;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -26,9 +25,7 @@ import java.util.List;
 public interface LibrarySessionBeanRemote {
     void addBook(String bookName);
 
-    List<String> getBooks();
-
-    @Path("get-book")
+    @Path("get-book-list")
     @GET
-    Response getBookList();
+    List<String> getBooks();
 }

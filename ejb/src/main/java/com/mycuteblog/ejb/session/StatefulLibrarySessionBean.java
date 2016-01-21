@@ -3,7 +3,6 @@ package com.mycuteblog.ejb.session;
 import com.mycuteblog.ejb.core.bean.LibrarySessionBeanRemote;
 
 import javax.ejb.Stateful;
-import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,10 +38,5 @@ public class StatefulLibrarySessionBean implements LibrarySessionBeanRemote {
     @Override
     public List<String> getBooks() {
         return bookShelf;
-    }
-
-    @Override
-    public Response getBookList() {
-        return Response.ok(getBooks()).build();
     }
 }

@@ -19,7 +19,8 @@
             <groupId>com.mycuteblog</groupId>
             <artifactId>ejb</artifactId>
             <version>1.0-SNAPSHOT</version>
-            <scope>provided</scope>
+            <!--remove provided for < jboss 6.0-->
+            <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>
 

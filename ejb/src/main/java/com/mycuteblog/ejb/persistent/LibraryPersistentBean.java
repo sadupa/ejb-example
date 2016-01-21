@@ -6,7 +6,6 @@ import com.mycuteblog.ejb.core.bean.model.Book;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.core.Response;
 import java.util.List;
 
 /**
@@ -38,9 +37,5 @@ public class LibraryPersistentBean implements LibraryPersistentBeanRemote {
     @Override
     public List<Book> getBooks() {
         return entityManager.createQuery("From Book").getResultList();
-    }
-
-    public Response getBookList() {
-        return Response.ok(getBooks()).build();
     }
 }
