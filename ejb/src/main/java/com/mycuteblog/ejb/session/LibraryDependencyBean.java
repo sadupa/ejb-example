@@ -1,11 +1,11 @@
 package com.mycuteblog.ejb.session;
 
-import com.mycuteblog.ejb.core.bean.DependencySessionBeanRemote;
-import com.mycuteblog.ejb.core.bean.LibrarySessionBeanRemote;
+import com.mycuteblog.ejb.core.bean.LibraryDependencyBeanRemote;
+import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
+import com.mycuteblog.ejb.core.model.Book;
 
 import javax.ejb.EJB;
-import javax.ejb.Remote;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import java.util.List;
 
 /**
@@ -23,20 +23,19 @@ import java.util.List;
  * Created on : 1/5/16 5:37 PM
  */
 
-@Remote
-@Stateful
-public class DependencyLibrarySessionBean implements DependencySessionBeanRemote {
+@Stateless
+public class LibraryDependencyBean implements LibraryDependencyBeanRemote {
 
-    @EJB(beanName = "StatefulLibrarySessionBean")
-    LibrarySessionBeanRemote librarySessionBean;
+    @EJB
+    private LibraryPersistentBeanRemote libraryBean;
 
     @Override
     public void addBook(String bookName) {
-        librarySessionBean.addBook(bookName);
+        libraryBean.addBook(new Book());
     }
 
     @Override
-    public List<String> getBooks() {
-        return librarySessionBean.getBooks();
+    public List<Book> getBooks() {
+        return libraryBean.getBooks();
     }
 }

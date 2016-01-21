@@ -16,7 +16,7 @@
 
     <context-param>
         <param-name>resteasy.jndi.resources</param-name>
-        <param-value>sample-ear-1.0-SNAPSHOT/LibraryPersistentBean/remote</param-value>
+        <param-value>sample-ear-1.0-SNAPSHOT/LibraryDependencyBean/remote</param-value>
     </context-param>
 
     <listener>

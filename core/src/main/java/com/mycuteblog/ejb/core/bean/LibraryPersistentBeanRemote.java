@@ -1,6 +1,6 @@
 package com.mycuteblog.ejb.core.bean;
 
-import com.mycuteblog.ejb.core.bean.model.Book;
+import com.mycuteblog.ejb.core.model.Book;
 
 import javax.ejb.Remote;
 import javax.ws.rs.GET;

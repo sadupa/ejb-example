@@ -1,5 +1,11 @@
 package com.mycuteblog.ejb.core.bean;
 
+import com.mycuteblog.ejb.core.model.Book;
+
+import javax.ejb.Remote;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import java.util.List;
 
 /**
@@ -17,7 +23,13 @@ import java.util.List;
  * Created on : 12/18/15 3:36 PM
  */
 
-public interface DependencySessionBeanRemote {
+@Remote
+@Path("/library")
+public interface LibraryDependencyBeanRemote {
     void addBook(String bookName);
-    List<String> getBooks();
+
+    @Path("/get-book-list")
+    @GET
+    @Produces({"application/json"})
+    List<Book> getBooks();
 }

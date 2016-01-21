@@ -1,7 +1,7 @@
 package com.mycuteblog.ejb.persistent;
 
 import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
-import com.mycuteblog.ejb.core.bean.model.Book;
+import com.mycuteblog.ejb.core.model.Book;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
