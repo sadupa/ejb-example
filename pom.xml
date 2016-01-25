@@ -14,6 +14,7 @@
         <module>ejb</module>
         <module>jsf</module>
         <module>api</module>
+        <module>web-service</module>
         <module>ear</module>
         <module>client</module>
     </modules>

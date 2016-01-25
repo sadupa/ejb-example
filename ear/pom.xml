@@ -38,6 +38,11 @@
             <version>1.0-SNAPSHOT</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>com.mycuteblog</groupId>
+            <artifactId>web-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -75,6 +80,12 @@
                             <groupId>com.mycuteblog</groupId>
                             <artifactId>ejb</artifactId>
                             <bundleFileName>ejb.jar</bundleFileName>
+                            <includeInApplicationXml>true</includeInApplicationXml>
+                        </jarModule>
+                        <jarModule>
+                            <groupId>com.mycuteblog</groupId>
+                            <artifactId>web-service</artifactId>
+                            <bundleFileName>web-service.jar</bundleFileName>
                             <includeInApplicationXml>true</includeInApplicationXml>
                         </jarModule>
                     </modules>
