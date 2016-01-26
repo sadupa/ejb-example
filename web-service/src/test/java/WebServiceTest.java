@@ -21,6 +21,8 @@ public class WebServiceTest {
     public static void main(String[] args) {
         LibraryWebService_Service libraryWebService_service = new LibraryWebService_Service();
         List<Book> bookList = libraryWebService_service.getLibraryWebServicePort().getBooks();
-        System.out.println(bookList);
+        for(Book book:bookList){
+            System.out.println(book.getName());
+        }
     }
 }

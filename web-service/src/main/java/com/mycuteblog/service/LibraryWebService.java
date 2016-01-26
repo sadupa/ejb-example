@@ -1,8 +1,10 @@
 package com.mycuteblog.service;
 
 import com.mycuteblog.ejb.core.bean.LibraryDependencyBeanRemote;
+import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
 import com.mycuteblog.ejb.core.model.Book;
 
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -26,6 +28,11 @@ import java.util.List;
 @Stateless
 @WebService(serviceName = "LibraryWebService")
 public class LibraryWebService implements LibraryDependencyBeanRemote {
+
+    @EJB
+    private LibraryPersistentBeanRemote libraryBean;
+
+
     @Override
     public void addBook(String bookName) {
 
@@ -34,6 +41,6 @@ public class LibraryWebService implements LibraryDependencyBeanRemote {
     @Override
     @WebMethod(operationName = "getBooks")
     public List<Book> getBooks() {
-        return null;
+        return libraryBean.getBooks();
     }
 }

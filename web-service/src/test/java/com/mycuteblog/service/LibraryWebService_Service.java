@@ -1,14 +1,10 @@
 
 package com.mycuteblog.service;
 
+import javax.xml.namespace.QName;
+import javax.xml.ws.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
-import javax.xml.ws.WebEndpoint;
-import javax.xml.ws.WebServiceClient;
-import javax.xml.ws.WebServiceException;
-import javax.xml.ws.WebServiceFeature;
 
 
 /**
@@ -17,7 +13,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "LibraryWebService", targetNamespace = "http://service.mycuteblog.com/", wsdlLocation = "file:/usr/local/jboss-5.1.0.GA/server/default/data/wsdl/sample-ear-1.0-SNAPSHOT.ear/web-service.jar/LibraryWebService1902846735230590610.wsdl")
+@WebServiceClient(name = "LibraryWebService", targetNamespace = "http://service.mycuteblog.com/", wsdlLocation = "file:/usr/local/jboss-5.1.0.GA/server/default/data/wsdl/sample-ear-1.0-SNAPSHOT.ear/web-service.jar/LibraryWebService8205329829106616530.wsdl")
 public class LibraryWebService_Service
     extends Service
 {
@@ -30,7 +26,7 @@ public class LibraryWebService_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("file:/usr/local/jboss-5.1.0.GA/server/default/data/wsdl/sample-ear-1.0-SNAPSHOT.ear/web-service.jar/LibraryWebService1902846735230590610.wsdl");
+            url = new URL("file:/usr/local/jboss-5.1.0.GA/server/default/data/wsdl/sample-ear-1.0-SNAPSHOT.ear/web-service.jar/LibraryWebService8205329829106616530.wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
