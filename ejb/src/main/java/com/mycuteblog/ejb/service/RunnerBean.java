@@ -2,10 +2,14 @@ package com.mycuteblog.ejb.service;
 
 import com.mycuteblog.ejb.core.bean.runner.IRunnerBeanLocal;
 import com.mycuteblog.ejb.core.bean.runner.IRunnerBeanRemote;
+import com.mycuteblog.ejb.core.bean.step.IStepPersistentBeanLocal;
+import com.mycuteblog.ejb.core.model.StepCount;
 
 import javax.annotation.Resource;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jms.*;
+import java.util.List;
 
 /**
  * (C) Copyright 2016 hSenid Mobile Solutions (Pvt) Limited.
@@ -31,8 +35,11 @@ public class RunnerBean implements IRunnerBeanLocal, IRunnerBeanRemote {
     @Resource(mappedName = "java:/ConnectionFactory")
     private QueueConnectionFactory queueConnectionFactory;
 
+    @EJB
+    private IStepPersistentBeanLocal stepPersistentBean;
 
-    public void recordStep(){
+
+    public void recordStep() {
         QueueConnection queueConnection = null;
 
         try {
@@ -46,9 +53,8 @@ public class RunnerBean implements IRunnerBeanLocal, IRunnerBeanRemote {
             sender.send(textMessage);
         } catch (JMSException e) {
             e.printStackTrace();
-        }
-        finally {
-            if(queueConnection!=null){
+        } finally {
+            if (queueConnection != null) {
                 try {
                     queueConnection.close();
                 } catch (JMSException e) {
@@ -56,5 +62,14 @@ public class RunnerBean implements IRunnerBeanLocal, IRunnerBeanRemote {
                 }
             }
         }
+    }
+
+    @Override
+    public int getStepCount() {
+        List<StepCount> stepCount = stepPersistentBean.getStepCounts();
+        if (stepCount == null || stepCount.size() == 0) {
+            return 0;
+        }
+        return stepCount.get(0).getCount();
     }
 }

@@ -36,12 +36,22 @@
 
     <servlet>
         <servlet-name>count-servlet</servlet-name>
-        <servlet-class>com.mycuteblog.api.RunnerAjaxServlet</servlet-class>
+        <servlet-class>com.mycuteblog.api.StepCountServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>count-servlet</servlet-name>
         <url-pattern>/count</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>get-count-servlet</servlet-name>
+        <servlet-class>com.mycuteblog.api.GetCountServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>get-count-servlet</servlet-name>
+        <url-pattern>/get-count</url-pattern>
     </servlet-mapping>
 
 </web-app>

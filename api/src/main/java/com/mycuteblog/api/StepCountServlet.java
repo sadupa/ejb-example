@@ -25,12 +25,12 @@ import java.io.IOException;
  * @Author Sadupa Wijeratne
  * Created on : 1/30/16 3:46 PM
  */
-public class RunnerAjaxServlet extends HttpServlet {
+public class StepCountServlet extends HttpServlet {
 
     @EJB
     private IRunnerBeanLocal iRunnerBeanLocal;
 
-    private static final Logger logger = LogManager.getLogger(RunnerAjaxServlet.class);
+    private static final Logger logger = LogManager.getLogger(StepCountServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -17,21 +17,30 @@
                 url: 'http://localhost:8080/api/count',
                 data: $(this).serialize(),
                 success: function (data) {
-                    $('#outputMessage').val(data);
-                },
-                complete: function (data) {
+                    $('#message').html("Running");
                 }
             });
             time = setTimeout(startRunning, interval);
         }
-        function stopRunning () {
+        function stopRunning() {
             clearTimeout(time);
-            alert("Runner Stopped");
+            $('#message').html("Runner Stopped");
+        }
+        function getCount() {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8080/api/get-count',
+                data: $(this).serialize(),
+                success: function (data) {
+                    $('#message').html(data);
+                }
+            });
         }
     </script>
 </h:head>
-
 <h:commandButton value="Run" onclick="startRunning()"/>
 <h:commandButton value="Stop" onclick="stopRunning()"/>
+<h:commandButton value="Get Count" onclick="getCount()"/>
+<h:outputLabel id="message"></h:outputLabel>
 
 </html>

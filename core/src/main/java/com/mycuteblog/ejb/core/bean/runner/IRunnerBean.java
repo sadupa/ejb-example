@@ -16,4 +16,6 @@ package com.mycuteblog.ejb.core.bean.runner;
  */
 public interface IRunnerBean {
     void recordStep();
+
+    int getStepCount();
 }
