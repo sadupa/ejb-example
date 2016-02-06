@@ -29,7 +29,7 @@
         <dependency>
             <groupId>jboss</groupId>
             <artifactId>jbossall-client</artifactId>
-            <version>3.2.6</version>
+            <version>4.2.2.GA</version>
         </dependency>
 
         <dependency>

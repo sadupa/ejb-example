@@ -10,6 +10,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <jta-data-source>java:/MySqlDs</jta-data-source>
         <class>com.mycuteblog.ejb.core.model.Book</class>
+        <class>com.mycuteblog.ejb.core.model.StepCount</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

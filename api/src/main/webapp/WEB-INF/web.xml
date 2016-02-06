@@ -34,4 +34,14 @@
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>count-servlet</servlet-name>
+        <servlet-class>com.mycuteblog.api.RunnerAjaxServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>count-servlet</servlet-name>
+        <url-pattern>/count</url-pattern>
+    </servlet-mapping>
+
 </web-app>

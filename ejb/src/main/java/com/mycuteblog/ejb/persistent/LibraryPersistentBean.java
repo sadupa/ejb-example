@@ -3,9 +3,14 @@ package com.mycuteblog.ejb.persistent;
 import com.mycuteblog.ejb.core.bean.LibraryPersistentBeanRemote;
 import com.mycuteblog.ejb.core.model.Book;
 
+import javax.annotation.Resource;
 import javax.ejb.Stateless;
+import javax.ejb.TransactionManagement;
+import javax.ejb.TransactionManagementType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.SystemException;
+import javax.transaction.UserTransaction;
 import java.util.List;
 
 /**
@@ -24,14 +29,28 @@ import java.util.List;
  */
 
 @Stateless
+@TransactionManagement(value = TransactionManagementType.BEAN)
 public class LibraryPersistentBean implements LibraryPersistentBeanRemote {
 
     @PersistenceContext(unitName = "EjbComponentPU2")
     private EntityManager entityManager;
 
+    @Resource
+    private UserTransaction userTransaction;
+
     @Override
     public void addBook(Book book) {
-        entityManager.persist(book);
+        try {
+            userTransaction.begin();
+            entityManager.persist(new Book());
+            userTransaction.commit();
+        } catch (Exception e) {
+            try {
+                userTransaction.rollback();
+            } catch (SystemException e1) {
+                e1.printStackTrace();
+            }
+        }
     }
 
     @Override
